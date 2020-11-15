@@ -31,18 +31,18 @@ module.exports = (app) => {
   app
     .route("/registrations")
     .all(app.config.passport.authenticate())
-    .post(app.api.enrollment.save)
-    .get(app.api.enrollment.get);
+    .post(app.api.registrations.save)
+    .get(app.api.registrations.get);
 
   app
     .route("/registrations/:id")
     .all(app.config.passport.authenticate())
-    .put(app.api.enrollment.save)
-    .delete(app.api.enrollment.remove)
-    .get(app.api.enrollment.get);
+    .put(app.api.registrations.save)
+    .delete(app.api.registrations.remove)
+    .get(app.api.registrations.get);
 
   app
     .route("/registrations/:myCourses/myCourses")
     .all(app.config.passport.authenticate())
-    .get(app.api.enrollment.getMyCourses);
+    .get(app.api.registrations.getMyCourses);
 };
