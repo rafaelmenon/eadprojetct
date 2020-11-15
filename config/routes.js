@@ -14,4 +14,17 @@ module.exports = (app) => {
     .put(app.api.users.updateUser)
     .delete(app.api.users.remove)
     .get(app.api.users.getById);
+
+  app
+    .route("/courses")
+    .all(app.config.passport.authenticate())
+    .get(admin(app.api.courses.get))
+    .post(admin(app.api.courses.save));
+
+  app
+    .route("/course/:id")
+    .all(app.config.passport.authenticate())
+    .get(app.api.courses.get)
+    .put(admin(app.api.courses.save))
+    .delete(admin(app.api.courses.remove));
 };
