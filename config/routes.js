@@ -18,13 +18,13 @@ module.exports = (app) => {
   app
     .route("/courses")
     .all(app.config.passport.authenticate())
-    .get(admin(app.api.courses.get))
+    .get(app.api.courses.get)
     .post(admin(app.api.courses.save));
 
   app
     .route("/course/:id")
     .all(app.config.passport.authenticate())
     .get(app.api.courses.get)
-    .put(admin(app.api.courses.save))
-    .delete(admin(app.api.courses.remove));
+    .put(app.api.courses.save)
+    .delete(app.api.courses.remove);
 };
