@@ -19,7 +19,7 @@ module.exports = (app) => {
     .route("/courses")
     .all(app.config.passport.authenticate())
     .get(app.api.courses.get)
-    .post(admin(app.api.courses.save));
+    .post(app.api.courses.save);
 
   app
     .route("/course/:id")
