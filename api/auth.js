@@ -25,6 +25,7 @@ module.exports = (app) => {
       active: user.active,
       phone: user.phone,
       city: user.city,
+      avatar: user.avatar,
       iat: now,
       exp: now + 60 * 60 * 24 * 2,
     };
