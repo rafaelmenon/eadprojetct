@@ -96,7 +96,7 @@ module.exports = (app) => {
   const getById = (req, res) => {
     app
     .db("users")
-    .select("id", "name", "email", "admin", "phone", "city", "active")
+    .select("*")
     .where({ id: req.params.id })
     .first()
     .then((users) => res.json(users))
