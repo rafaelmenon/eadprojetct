@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "mysql741.umbler.com",
+            "port": 41890,
+            "driver": "MySQL",
+            "name": "Plataforma Umbler",
+            "database": "phalconead",
+            "username": "phalcon",
+            "password": "k909s41*"
+        }
+    ]
+}
